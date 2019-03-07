@@ -7,16 +7,25 @@ import { EmployeeService } from './employee.service';
   providers: [EmployeeService]
 })
 export class EmployeeComponent implements OnInit {
-private employeeList;
+private employeeList=[];
   constructor(private es:EmployeeService) { }
 
   ngOnInit() {
     this.getAllEmployee();
   }
 	getAllEmployee(){
-		return this.es.get().then(employee => {
-		  this.employeeList = employee;
-		});
+		if(localStorage.getItem('empList')==undefined && localStorage.getItem('empList')==null)
+		{
+			return this.es.get().then(employee => {
+			  this.employeeList = employee;
+			  console.log(employee)
+			   localStorage.setItem('empList',JSON.stringify(employee));
+			});
+		}else{
+			const retriveData=localStorage.getItem('empList');
+			this.employeeList=JSON.parse(retriveData);
+		}
+		
 	  }
 	deleteEmpDetails(item){
 		this.es.delete(item).then(() => {

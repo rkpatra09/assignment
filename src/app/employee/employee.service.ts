@@ -62,10 +62,12 @@ export class EmployeeService {
     return new Promise(resolve => resolve(employeess));
   }
   delete(selected) {
-	  return new Promise(resolve => {
-		const index = employeess.findIndex(employeess => employeess === selected);
-		console.log(index)
-		employeess.splice(index, 1);
+	   const retriveData=localStorage.getItem('empList');
+		let employees=JSON.parse(retriveData);
+		return new Promise(resolve => {
+		const index = employees.findIndex(employees => employees.empId === selected.empId);
+		employees.splice(index, 1);
+		 localStorage.setItem('empList',JSON.stringify(employees));
 		resolve(true);
 	  });
   }
