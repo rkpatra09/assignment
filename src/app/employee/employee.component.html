@@ -1,5 +1,7 @@
 <div class="container">
- <table class="table table-hover" *ngIf="employeeList">
+  <div class="row pull-right"><button class="btn btn-info" [routerLink]="['/employees/add']">Add Employee</button></div>
+ <br/>
+  <table class="table table-hover" *ngIf="employeeList">
     <thead>
       <tr>
         <th>Firstname</th>
