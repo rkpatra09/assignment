@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-const routes: Routes = [];
+import { EmployeeRoutes }    from './employee/employee.route';
+export const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/employees',
+    pathMatch: 'full'
+  },
+    // Add dog routes form a different file
+  ...EmployeeRoutes
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
