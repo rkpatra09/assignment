@@ -11,10 +11,12 @@ private employeeList=[];
   constructor(private es:EmployeeService) { }
 
   ngOnInit() {
+	  
     this.getAllEmployee();
+	 
   }
 	getAllEmployee(){
-		if(localStorage.getItem('empList')==undefined && localStorage.getItem('empList')==null)
+		if(localStorage.getItem('empList')==undefined || localStorage.getItem('empList')==null || localStorage.getItem('empList')=='empty')
 		{
 			return this.es.get().then(employee => {
 			  this.employeeList = employee;
@@ -31,5 +33,9 @@ private employeeList=[];
 		this.es.delete(item).then(() => {
 			return this.getAllEmployee();
 		});
+	}
+	clearLocalStorage(){
+		localStorage.setItem('empList','empty');
+		this.getAllEmployee();
 	}
 }

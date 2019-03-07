@@ -81,6 +81,16 @@ export class EmployeeService {
 			return item.empId==id;         
 		});
 		return new Promise(resolve => resolve(data));
-	
-  }
+	}
+updateEmpDetails(item) {
+		const retriveData=localStorage.getItem('empList');
+		let employees=JSON.parse(retriveData);
+		return new Promise(resolve => {
+		const index = employees.findIndex(employees => employees.empId === item.empId);
+		employees.splice(index, 1);
+		 employees.push(item);
+		 localStorage.setItem('empList',JSON.stringify(employees));
+		resolve(true);
+	  });
+	}
 }
