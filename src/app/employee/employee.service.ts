@@ -3,11 +3,46 @@ import { Injectable } from '@angular/core';
 //import {Observable} from 'rxjs/Observable';
 
 const employeess = [
-  { empId: '101', name: "John" },
-  { empId: '102', name: "Joseph" },
-  { empId: '103', name: "Raj" },
-  { empId: '104', name: "Maria" },
-  { empId: '105', name: "Max" },
+  {
+    empId:1,
+    fullname:'Alex',
+    emailId:'alex@gmail.com',
+    phone: 9154738678,
+    username: 'alex',
+    password: 'alexp',
+    address: '#13 wall street',
+    dob: '18/05/1993'
+  },
+  {
+    empId:2,
+    fullname:'Castiel',
+    emailId:'cas@hotmail.com',
+    phone: 9154738878,
+    username: 'dor',
+    password: 'rabc',
+    address: '#20 st louis street',
+    dob: '6/05/1967'
+  },
+  {
+    empId:3,
+    fullname:'Kevin',
+    emailId:'kev_prop@yahoo.com',
+    phone: 6758739978,
+    username: 'kev',
+    password: 'kevinx',
+    address: '#89 quartz street',
+    dob: '1/02/1987'
+  },
+  {
+    empId:4,
+    fullname:'Dean',
+    emailId:'dinno@gmail.com',
+    phone: 9154738678,
+    username: 'din',
+    password: 'din09',
+    address: 'Oklahama',
+    dob: '6/07/1989'
+  }
 ];
 
 @Injectable({

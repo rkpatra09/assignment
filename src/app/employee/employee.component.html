@@ -4,25 +4,31 @@
   <table class="table table-hover" *ngIf="employeeList">
     <thead>
       <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
+        <th>Fullname</th>
+        <th>Email ID</th>
+        <th>Phone Number</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Address</th>
+        <th>Date of Birth</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let emp of employeeList">
-        <td>{{emp.empId}}</td>
-        <td>{{emp.name}}</td>
+        <td>{{emp.fullname}}</td>
+        <td>{{emp.emailId}}</td>
+        <td>{{emp.phone}}</td>
+        <td>{{emp.username}}</td>
+        <td>{{emp.password}}</td>
+        <td>{{emp.address}}</td>
+        <td>{{emp.dob}}</td>
         <td><button class="btn btn-primary">Edit</button>
 			<button (click)="deleteEmpDetails(emp)"class="btn btn-danger">Delete</button>
 		</td>
       </tr>
       
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-      </tr>
+    
     </tbody>
   </table>
 </div>
