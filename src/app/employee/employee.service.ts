@@ -74,4 +74,13 @@ export class EmployeeService {
   add(data) {
     employeess.push();
   }
+  getEmpDetails(id) {
+		const retriveData=localStorage.getItem('empList');
+		let employees=JSON.parse(retriveData);
+		let data= employees.filter(function(item){
+			return item.empId==id;         
+		});
+		return new Promise(resolve => resolve(data));
+	
+  }
 }
