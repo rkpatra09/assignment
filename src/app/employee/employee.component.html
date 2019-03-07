@@ -23,7 +23,7 @@
         <td>{{emp.password}}</td>
         <td>{{emp.address}}</td>
         <td>{{emp.dob}}</td>
-        <td><button class="btn btn-primary">Edit</button>
+        <td><button class="btn btn-primary" [routerLink]="['/employees/edit/',emp.empId]" >Edit</button>
 			<button (click)="deleteEmpDetails(emp)"class="btn btn-danger">Delete</button>
 		</td>
       </tr>
