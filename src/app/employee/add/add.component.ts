@@ -14,9 +14,12 @@ export class AddComponent implements OnInit {
   ngOnInit() {
       this.addEmpForm = this.formBuilder.group({
         fullName: ['', Validators.required],
-        lastName: ['', Validators.required],
         email: ['', [Validators.required, Validators.email]],
-        password: ['', [Validators.required, Validators.minLength(6)]]
+        phone: ['', Validators.required],
+        username: ['', Validators.required],
+        password: ['', [Validators.required, Validators.minLength(6)]],
+        address: ['', Validators.required],
+        dob: ['', Validators.required]
     });
   }
   get f() { return this.addEmpForm.controls; }
@@ -28,7 +31,6 @@ export class AddComponent implements OnInit {
           if (this.addEmpForm.invalid) {
               return;
           }
-  
           alert('SUCCESS!! :-)')
       }
 

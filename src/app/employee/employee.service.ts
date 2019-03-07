@@ -68,5 +68,8 @@ export class EmployeeService {
 		employeess.splice(index, 1);
 		resolve(true);
 	  });
-	}
+  }
+  add(data) {
+    employeess.push();
+  }
 }
