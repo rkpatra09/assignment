@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-//import {Http, Response, Headers, RequestOptions, RequestMethod} from '@angular/http';
-//import {Observable} from 'rxjs/Observable';
 
 const employeess = [
   {
@@ -51,12 +49,6 @@ const employeess = [
 export class EmployeeService {
 
   constructor() { }
-  
-  
-  /*getEmployees():Observable<Employee[]>{
-	return this._http.get('API URL')
-	.map((response:Response) => <Employee[]> response.json());
-	}*/ //If we have API url then HTTP call
 	
   get() {
     return new Promise(resolve => resolve(employeess));
